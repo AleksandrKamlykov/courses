@@ -11,9 +11,7 @@
     "dev": "nodemon index.js",
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "gh-pages -d ../node_express/",
-    "build": "node index.js"
-  },
+    },
   "dependencies": {
     "@handlebars/allow-prototype-access": "^1.0.5",
     "axios": "^0.24.0",
