@@ -6,22 +6,22 @@ const fs = require('fs');
 const path = require('path');
 const router = Router();
 const keys = require('../keys')
-const regEmail = require('../emails')
+//const regEmail = require('../emails')
 
 const { SEND_GRID_API_KEY } = keys
 
-const transporter = nodemailer.createTransport(sendgrid({
-    auth: { api_key: SEND_GRID_API_KEY }
-}))
+// const transporter = nodemailer.createTransport(sendgrid({
+//     auth: { api_key: SEND_GRID_API_KEY }
+// }))
 
-async function appendFileAsync(path, data) {
-    return new Promise((resolve, reject) => fs.appendFile(path, data, (err) => {
-        if (err) {
-            return reject(err.message)
-        }
-        resolve()
-    }))
-}
+// async function appendFileAsync(path, data) {
+//     return new Promise((resolve, reject) => fs.appendFile(path, data, (err) => {
+//         if (err) {
+//             return reject(err.message)
+//         }
+//         resolve()
+//     }))
+// }
 
 
 
