@@ -1,0 +1,30 @@
+<h1>Новостная лента</h1>
+
+{{#if news.length}}
+    <div class="row">
+  {{#each news}}
+
+          <div class="col s6 m6">
+          <div class="col s12 m12">
+              <div class="card ">
+                  <div class="card-image">
+                      <img src="{{imageUrl}}">
+                      <span class="card-title">{{title}}</span>
+                  </div>
+                  <div class="card-content">
+                      <p>{{body}}</p>
+                  </div>
+                  <div class="card-action">
+                      <strong>{{creator}}</strong>
+                  </div>
+
+              </div>
+          </div>
+          </div>
+
+  {{/each}}
+    </div>
+
+    {{else}}
+    <p>Пока нет новостей</p>
+    {{/if}}

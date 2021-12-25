@@ -1,0 +1,30 @@
+<h2>Здесь вы можете создать новую новость</h2>
+
+
+<div class="row">
+    <form action="/news/create" method="post" class="col s12">
+        <div class="row">
+            <div class="input-field col s6">
+                <input name="creator" placeholder="Введите ваше имя" id="first_name" type="text" class="validate">
+                <label for="first_name">Ваше имя</label>
+            </div>
+            <div class="input-field col s6">
+                <input name="title" id="last_name" type="text" class="validate">
+                <label for="last_name">Название заголовка</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input name="body"  type="text" class="validate">
+                <label >Введите текст новости</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input name="imageUrl"  type="text" class="validate">
+                <label >Вставьте ссылку на изображение</label>
+            </div>
+        </div>
+        <button class="btn btn-primary">Добавить новость</button>
+           </form>
+</div>
