@@ -6,10 +6,13 @@
   "license": "ISC",
   "author": "",
   "main": "index.js",
+  "private": true,
   "scripts": {
     "dev": "nodemon index.js",
     "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "gh-pages -d ../node_express/",
+    "build": "node index.js"
   },
   "dependencies": {
     "@handlebars/allow-prototype-access": "^1.0.5",
@@ -27,6 +30,7 @@
     "uuid": "^8.3.2"
   },
   "devDependencies": {
+    "gh-pages": "^3.2.3",
     "nodemon": "^2.0.12"
   }
 }
