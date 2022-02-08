@@ -1,4 +1,4 @@
-const {Router} = require('express')
+const { Router } = require('express')
 const Course = require('../models/course')
 const auth = require("../middleware/auth")
 const router = Router()
@@ -45,12 +45,7 @@ router.get('/', auth, async (req, res) => {
 
     const courses = mapCartItems(user.cart)
 
-    res.render('card', {
-        title: 'Корзина',
-        isCard: true,
-        courses: courses,
-        price: computePrice(courses)
-    })
+    res.send(courses)
 })
 
 module.exports = router

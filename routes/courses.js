@@ -3,14 +3,9 @@ const Course = require('../models/course')
 const auth = require("../middleware/auth")
 const router = Router()
 
-router.get('/', async (req, res) => {
+router.get('/', async (req, res, next) => {
     const courses = await Course.find()
-    res.render('courses', {
-        title: 'Курсы',
-        isCourses: true,
-        courses
-    })
-
+    res.send(courses)
 })
 
 router.get('/:id/edit', auth, async (req, res) => {

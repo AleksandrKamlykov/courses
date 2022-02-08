@@ -7,19 +7,15 @@ const axios = require('axios')
 
 router.get('/', async (req, res) => {
     const news = await News.find()
-    res.render('news', {
-        title: 'news',
-        isNews: true,
-        news
-    })
+    res.send(news)
 })
 
-router.get('/create', async (req, res) => {
-    res.render('createNews', {
-        title: 'create news',
-        isCreateNews: true,
-    })
-})
+// router.get('/create', async (req, res) => {
+//     res.render('createNews', {
+//         title: 'create news',
+//         isCreateNews: true,
+//     })
+// })
 
 router.post('/create', async (req, res) => {
 
@@ -39,7 +35,7 @@ router.post('/create', async (req, res) => {
         ${req.body.title}
         ${req.body.body}
         `
-        axios.get(`https://api.telegram.org/bot1831614888:AAE41QAzdDu67eYpu-vLPrny0lb4Oy46_TE/sendMessage?chat_id=359806396&text=${mess}`)
+        // axios.get(`https://api.telegram.org/bot1831614888:AAE41QAzdDu67eYpu-vLPrny0lb4Oy46_TE/sendMessage?chat_id=359806396&text=${mess}`)
         // function (error, response, body) {
         //
         //     console.log('error:', error);
