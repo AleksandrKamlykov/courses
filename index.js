@@ -58,12 +58,12 @@ app.get('/', (req, res) => {
     </div>    
     `)
 })
-app.use('/add', addRoutes)
-app.use('/courses', coursesRoutes)
-app.use('/card', cardRoutes)
-app.use('/orders', ordersRoutes)
-app.use("/auth", authRoutes)
-app.use('/news', newsRoutes)
+// app.use('/add', addRoutes)
+// app.use('/courses', coursesRoutes)
+// app.use('/card', cardRoutes)
+// app.use('/orders', ordersRoutes)
+// app.use("/auth", authRoutes)
+// app.use('/news', newsRoutes)
 
 async function start() {
 
