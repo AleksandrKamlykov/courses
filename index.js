@@ -48,7 +48,13 @@ app.use(function (req, res, next) {
     next();
 });
 
-
+app.get('/', (req, res) => {
+    res.end(`
+    <div>
+    any text
+    </div>    
+    `)
+})
 app.use('/add', addRoutes)
 app.use('/courses', coursesRoutes)
 app.use('/card', cardRoutes)
@@ -69,7 +75,7 @@ async function start() {
             console.log(`server running port: ${PORT}`)
         })
     } catch (err) {
-        throw err
+        throw Error(err)
     }
 }
 
