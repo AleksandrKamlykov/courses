@@ -48,6 +48,7 @@ app.use(function (req, res, next) {
     next();
 });
 
+
 app.use('/add', addRoutes)
 app.use('/courses', coursesRoutes)
 app.use('/card', cardRoutes)
