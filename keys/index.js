@@ -6,3 +6,4 @@ module.exports = {
     FROM: 'NODE-test@gmail.com',
     BASE_URL: 'http://localhost:8080'
 }
+//uyThUE0ZW46CgTJdHIWQ78DCGPgHwmgTRP5tJVcDhQdnsWMwwBvrgNCJKUOTBTy9

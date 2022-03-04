@@ -25,12 +25,6 @@ const { SEND_GRID_API_KEY } = keys
 
 
 
-router.get("/login", async (req, res) => {
-    res.render("./auth/login", {
-        title: "Авторизация",
-        isLogin: true
-    })
-})
 
 router.get("/logout", (req, res) => {
     req.session.destroy(() => {
@@ -45,20 +39,19 @@ router.post('/login', async (req, res) => {
         const candidate = await User.findOne({ email })
 
         if (candidate) {
-
             const areSame = pass === candidate.pass
             if (areSame) {
 
-                appendFileAsync(path.resolve(__dirname, 'logs.txt'), `\r user: ${email} login at: ${new Date} `);
+                // fs.appendFileAsync(path.resolve(__dirname, 'logs.txt'), `\r user: ${email} login at: ${new Date} `);
 
                 req.session.user = candidate
                 req.session.isAuthenticated = true
                 req.session.save(
 
-                    res.redirect("/")
+                    res.send({ result: true })
                 )
             }
-        } else res.redirect("/auth/login")
+        } else res.send({ result: false })
 
 
     } catch (e) {
@@ -80,7 +73,7 @@ router.post("/register", async (req, res) => {
             })
             await user.save()
             res.redirect("/auth/login#login");
-            await transporter.sendMail(regEmail(email))
+            // await transporter.sendMail(regEmail(email))
         }
     } catch (e) {
         console.log(e)
