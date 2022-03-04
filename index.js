@@ -15,8 +15,11 @@ const userMiddleware = require("./middleware/user")
 
 const keys = require('./keys')
 
-const { urlDB, sessionSecret } = keys
+const { sessionSecret } = keys
 const PORT = process.env.PORT || 8080
+const urlDB = "mongodb+srv://Aleksandr_A:2k3E7TkpFxNsK4Hi@cluster0.bve00.mongodb.net/shop"
+
+
 const app = express()
 
 
@@ -25,7 +28,7 @@ const store = new MongoStore({
     uri: urlDB
 })
 
-//app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join(__dirname, 'public')))
 app.use(express.urlencoded({ extended: true }))
 
 
