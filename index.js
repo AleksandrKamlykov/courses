@@ -17,7 +17,7 @@ const keys = require('./keys')
 
 const { sessionSecret } = keys
 const PORT = process.env.PORT || 8080
-const urlDB = "mongodb+srv://Aleksandr_A:2k3E7TkpFxNsK4Hi@cluster0.bve00.mongodb.net/shop"
+const urlDB = process.env.DBURL || "mongodb+srv://Aleksandr_A:2k3E7TkpFxNsK4Hi@cluster0.bve00.mongodb.net/shop"
 
 
 const app = express()
@@ -58,12 +58,12 @@ app.get('/', (req, res) => {
     </div>    
     `)
 })
-// app.use('/add', addRoutes)
-// app.use('/courses', coursesRoutes)
-// app.use('/card', cardRoutes)
-// app.use('/orders', ordersRoutes)
-// app.use("/auth", authRoutes)
-// app.use('/news', newsRoutes)
+app.use('/add', addRoutes)
+app.use('/courses', coursesRoutes)
+app.use('/card', cardRoutes)
+app.use('/orders', ordersRoutes)
+app.use("/auth", authRoutes)
+app.use('/news', newsRoutes)
 
 async function start() {
 
